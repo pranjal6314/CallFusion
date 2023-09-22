@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1089127413018",
+    "project_id": "callfusion-25e61",
+    "storage_bucket": "callfusion-25e61.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1089127413018:android:82a37374b24c3ebacaa8a3",
+        "android_client_info": {
+          "package_name": "com.example.callfusion"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQwjRkbMkOkey7OxCk1cC8uii0-4vqQGQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

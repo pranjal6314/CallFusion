@@ -1,4 +1,4 @@
-import 'dart:html';
+// import 'dart:html';
 
 import 'package:callfusion/utils/utils.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -13,19 +13,25 @@ class AuthMethods {
     bool res = false;
     try {
       final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+
       final GoogleSignInAuthentication? googleAuth =
           await googleUser?.authentication;
+
       final credential = GoogleAuthProvider.credential(
-          accessToken: googleAuth?.accessToken, idToken: googleAuth?.idToken);
+        accessToken: googleAuth?.accessToken,
+        idToken: googleAuth?.idToken,
+      );
+
       UserCredential userCredential =
           await _auth.signInWithCredential(credential);
+
       User? user = userCredential.user;
       if (user != null) {
         if (userCredential.additionalUserInfo!.isNewUser) {
-          await _firestore.collection('user').doc(user.uid).set({
+          await _firestore.collection('users').doc(user.uid).set({
             'username': user.displayName,
             'uid': user.uid,
-            'profilePhoto': user.photoURL
+            'profilePhoto': user.photoURL,
           });
         }
         res = true;
